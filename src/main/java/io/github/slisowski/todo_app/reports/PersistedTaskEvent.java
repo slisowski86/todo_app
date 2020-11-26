@@ -22,7 +22,7 @@ public class PersistedTaskEvent {
     public PersistedTaskEvent(TaskEvent source) {
 
         taskId = source.getTaskId();
-        name = getClass().getCanonicalName();
+        name = source.getClass().getSimpleName();
         occurrence = LocalDateTime.ofInstant(source.getOccurrence(), ZoneId.systemDefault());
     }
 
